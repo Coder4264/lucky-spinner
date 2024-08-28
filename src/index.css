@@ -72,6 +72,36 @@ body{
   height: 400px; 
 }
 
+
+
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-500%);
+  }
+}
+
+.winner-main-container {
+  position: absolute;
+  overflow-y: hidden !important;
+}
+
+.winner-main-container section {
+  animation: scrollUp 20s linear infinite;
+  overflow: hidden !important;
+}
+
+.winner-container{
+  position: relative;
+  width: auto;
+  height: auto;
+  overflow-y: hidden !important;
+}
+
+
+
 @media (max-width:1380px){
   .spin-container {
     position: relative;
@@ -112,3 +142,139 @@ body{
     transform: translate(-39%, -41.1%);
   }
 }
+
+@media (max-width:480px){
+  .spin-container {
+    position: relative;
+    width: 290px;
+    height: 290px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+    margin: auto;  
+  }
+  .main_spin_wheel > div > div > div > canvas  {
+    width: 235px; 
+    height: 235px; 
+  }
+  .main_spin_wheel {
+    transform: translate(-35%, -36%);
+  }
+}
+
+
+/* Winner screen Alignment */
+
+
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+  .winner-container {
+    width: 400px !important;
+  }
+  .winner-main-container {
+    width: 100% !important;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .winner-items {
+    margin-top: 100px !important;
+    height: 70% !important;
+    overflow-y: hidden;
+  }
+
+  .winner-container {
+    height: 50% !important;
+    overflow: hidden;
+  }
+
+  .winner-main-container {
+    height: 100% !important;
+    width: 100% !important;
+    overflow-y: hidden; /* No need for !important if not overridden elsewhere */
+  }
+}
+
+@media screen and (min-width: 1690px) {
+  .winner-items {
+    margin-top: 100px !important;
+    height: 80% !important;
+    width: 100% !important;
+    overflow-y: hidden;
+  }
+
+  .winner-container {
+    height: 100% !important;
+    width: 100% !important;
+    overflow: hidden;
+  }
+
+  .winner-main-container {
+    height: 100% !important;
+    width: 50% !important;
+    overflow-y: hidden; /* No need for !important if not overridden elsewhere */
+  }
+}
+
+
+/* 
+@media screen and (min-width: 1265px) {
+  .winner-container {
+    height: 700px !important;
+  }
+  .winner-main-container {
+    width: 100% !important;
+  }
+} */
+/* @media screen and (min-width: 1490px) {
+  .winner-container {
+    height: 900px !important;
+    
+  }
+  .winner-main-container {
+    width: 100% !important;
+    
+  }
+  
+} */
+
+
+
+/* @media (max-width:450px){
+  .winner-main-container{
+    width: 330px;
+    height: 380px;
+  }
+}
+@media (max-width:400px){
+  .winner-main-container{
+    width: 290px;
+    height: 270px;
+    padding: 5px 0px;
+  }
+}
+@media (max-width:908px){
+  .winner-main-container{
+    max-width: 370px;
+    height: 440px;
+  }
+}
+@media (max-width:890px){
+  .winner-main-container{
+    max-width: 360px;
+    height: 400px;
+  }
+}
+
+@media (max-width:830px){
+  .winner-main-container{
+    max-width: 330px;
+    height: 380px;
+  }
+}
+@media (max-width:768px){
+  .winner-main-container{
+    max-width: 360px;
+    height: 450px;
+  }
+} */

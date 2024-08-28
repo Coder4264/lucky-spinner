@@ -2,7 +2,7 @@ import SpinAndWin from "react-spin-game";
 import "react-spin-game/dist/index.css";
 import { useEffect, useRef } from "react";
 
-export default function SpinWheelGame({ spinnerRef, spinItems }) {
+export default function SpinWheelGame({ spinnerRef, spinItems,  }) {
   
   
 
@@ -14,10 +14,12 @@ export default function SpinWheelGame({ spinnerRef, spinItems }) {
         <SpinAndWin
             ref={spinnerRef}
             data={spinItems}
-            result={"test3"}
+            result={"test2"}
             hideButton={true}
-            horizantalText={true}    
-               
+            horizantalText={true}
+            minTime = {5}
+            maxTime={15}    
+            fontSize={24}
         />
       }
     </div>

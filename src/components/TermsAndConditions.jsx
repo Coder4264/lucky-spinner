@@ -16,18 +16,18 @@ export default function TermsAndConditions() {
 
     ]
   return (
-    <div className='text-white mt-20 px-10 h-[100%] text-justify'>
-        <div className='flex items-center justify-center gap-5'>
-            <div className='h-px md:w-4/12 bg-white'></div>
-            <h1 className='lg:text-2xl lg:w-4/12 w-12/12 text-center'>Terms and Conditions</h1>
-            <div className='h-px md:w-4/12 bg-white'></div>    
+    <div className='text-white px-5 h-[100%] text-justify w-full lg:w-6/12'>
+        <div className='flex items-center justify-start gap-5 md:mb-10'>
+            
+            <h1 className='lg:text-2xl w-12/12 text-center'>Terms and Conditions</h1>
+            <div className='h-px md:w-auto bg-white'></div>    
         </div>
 
         <div className='container-terms mb-10'>
             <div>
                 <h3><span className='text-md font-bold'>Event:</span> Lucky Wheel Spin</h3>
             </div>
-            <div className='clain-container flex flex-col gap-3 mt-5 md:w-6/12 w-full'>
+            <div className='clain-container flex flex-col gap-3 mt-5 w-full'>
                 <span className='text-md font-bold'>How To Claim:</span>
                 <span className='text-md'><span className='font-bold'>1.</span> This promotion is available for MYR members.</span>
                 <span className='text-md'><span className='font-bold'>2.</span> Prizes won in the Lucky Wheel Spin will be issued directly into members main wallet and is required to complete one (1) turnover before withdrawal.</span>
@@ -36,7 +36,7 @@ export default function TermsAndConditions() {
         </div>
 
 
-        <div className='terms-conditions md:w-6/12 w-full'>
+        <div className='terms-conditions w-full'>
             <h3 className='font-bold'>Terms and Conditions</h3>
             {terms.map((terms, index) => (
                 <div key={index} className='mb-2'>
