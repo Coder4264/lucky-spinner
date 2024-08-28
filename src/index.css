@@ -57,13 +57,13 @@ body{
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-55%, -57%);
+  transform: translate(-51%, -51%);
   z-index: 30;
   overflow: hidden;
 }
 .main_spin_wheel > div > div > div > canvas {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
 }
 .main_spin_wheel > div > div > div {
   min-height: inherit;
@@ -88,7 +88,7 @@ body{
   overflow-y: hidden !important;
 }
 
-.winner-main-container section {
+.animation-section {
   animation: scrollUp 20s linear infinite;
   overflow: hidden !important;
 }
@@ -99,10 +99,12 @@ body{
   height: auto;
   overflow-y: hidden !important;
 }
+._35l6Q{
+  display: none;
+}
 
 
-
-@media (max-width:1380px){
+/* @media (max-width:1380px){
   .spin-container {
     position: relative;
     width: 400px;
@@ -110,7 +112,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    /* border: 1px solid red; */
     margin: auto;  
   }
   .main_spin_wheel > div > div > div > canvas {
@@ -120,7 +121,7 @@ body{
   .main_spin_wheel {
     transform: translate(-45%, -46%);
   }
-}
+} */
 
 
 @media (max-width:728px){
@@ -135,11 +136,11 @@ body{
     margin: auto;  
   }
   .main_spin_wheel > div > div > div > canvas  {
-    width: 275px; 
-    height: 275px; 
+    width: 260px; 
+    height: 260px; 
   }
   .main_spin_wheel {
-    transform: translate(-39%, -41.1%);
+    transform: translate(-37%, -39%);
   }
 }
 
@@ -155,11 +156,11 @@ body{
     margin: auto;  
   }
   .main_spin_wheel > div > div > div > canvas  {
-    width: 235px; 
-    height: 235px; 
+    width: 210px; 
+    height: 210px; 
   }
   .main_spin_wheel {
-    transform: translate(-35%, -36%);
+    transform: translate(-31.3%, -32.3%);
   }
 }
 

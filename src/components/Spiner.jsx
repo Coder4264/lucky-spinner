@@ -1,12 +1,34 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import SpinWheelGame from './SpinWheelGame'
 import SpinnerFrame from './SpinnerFrame'
 
 export default function Spiner() {
+    const ref = useRef(null);
     const [availableSpins, setAvailableSpins] = useState(0);
     const [coupon, setCoupon] = useState("");
     const [isVerified, setIsVerified] = useState(false);
-    const ref = useRef(null);
+
+    const [spinItems, setSpinItems] = useState([
+        ["PKR 100", "#ffffff00"],
+        ["PKR 150", "#ffffff00"],
+        ["PKR 200", "#ffffff00"],
+        ["PKR 250", "#ffffff00"],
+        ["PKR 300", "#ffffff00"],
+        ["PKR 350", "#ffffff00"],
+        ["PKR 400", "#ffffff00"],
+        ["PKR 450", "#ffffff00"],
+        ["PKR 500", "#ffffff00"],
+        ["PKR 550", "#ffffff00"],
+        ["PKR 600", "#ffffff00"],
+        ["PKR 650", "#ffffff00"],
+    ]);
+    const [prize, setPrize] = useState(null);
+
+    const generatePrize = () => {
+    let num =   Math.floor(Math.random() * spinItems.length);
+    setPrize(spinItems[num][0]);
+    }
+
 
     const handleVerifyCoupon = () => {
         let allocatedSpins = 0;
@@ -31,25 +53,33 @@ export default function Spiner() {
     }
     const handleSpinLuckWheel = () => {
         if (availableSpins > 0) {
+            
             setAvailableSpins((prevSpins) => prevSpins - 1);
             ref.current.handleSpin();
         } else {
             alert("You have no spins right now!");
         }
     }
+
+    useEffect(() => {
+        generatePrize();
+    }, [availableSpins]);
+
     return (
 
 
 
-        <main className='py-56 bg-[url(../public/bgmobile.png)] md:bg-[url(../public/bgdesktop.png)] w-full bg-center bg-cover overflow-hidden'>
+        <main className='py-56 bg-[url(../public/mobile-final.svg)] md:bg-[url(../public/desktop-final.svg)] w-full bg-center bg-cover overflow-hidden'>
             <section className='w-12/12 h-full xl:w-10/12 mx-auto flex items-start justify-center relative'>
                 <img src="/Flag PSD.svg" alt="" className='max-h-[400px] absolute lg:static top-0 -left-20 sm:-left-16 md:left-0 xl:max-h-[500px] object-contain' />
                 <SpinnerFrame
                     spinnerRef={ref}
+                    spinItems={spinItems}
+                    prize={prize}
                 />
                 <img src="/Flag PSD.svg" alt="" className='max-h-[400px] absolute lg:static top-0 -right-20 sm:-right-16 md:right-0 xl:max-h-[500px] object-contain' />
             </section>
-            <div className='flex flex-col justify-center items-center relative z-[80]' >
+            <div className='flex flex-col justify-center items-center relative z-[80] mt-7' >
                 
             {
     isVerified ? (
@@ -72,9 +102,9 @@ export default function Spiner() {
             <input
                 type="text"
                 value={coupon}
-                placeholder="Add Coupon Code Here"
+                placeholder="Add Voucher Code"
                 onChange={(e) => setCoupon(e.target.value)}
-                className="md:w-1/4 w-1/2 text-center md:p-3 p-2 rounded-lg"
+                className="md:w-1/4 w-1/2 text-center p-3 rounded-lg text-xs md:text-sm outline-none"
             />
             <button
                 onClick={handleVerifyCoupon}
