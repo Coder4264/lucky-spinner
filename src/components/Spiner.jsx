@@ -24,7 +24,7 @@ export default function Spiner() {
         ["PKR 650", "#ffffff00"],
     ]);
     const [prize, setPrize] = useState(null);
-    const spinSound = new Audio('/public/spinner-sound.mp3');
+    const spinSound = new Audio('/spinner-sound.mp3');
 
     const generatePrize = () => {
     let num =   Math.floor(Math.random() * spinItems.length);
@@ -70,13 +70,13 @@ export default function Spiner() {
 
         <main className='py-56 bg-[url(../public/mobile-final.svg)] md:bg-[url(../public/desktop-final.svg)] w-full bg-center bg-cover overflow-hidden'>
             <section className='w-12/12 h-full xl:w-10/12 mx-auto flex items-start justify-center relative'>
-                <img src="/Flag PSD.svg" alt="" className='max-h-[400px] absolute lg:static top-0 -left-20 sm:-left-16 md:left-0 xl:max-h-[500px] object-contain' />
+                <img src="/Flag PSD.svg" alt="" className='flag max-h-[400px] absolute lg:static top-0 -left-12 sm:-left-16 md:left-0 xl:max-h-[500px] object-contain' />
                 <SpinnerFrame
                     spinnerRef={ref}
                     spinItems={spinItems}
                     prize={prize}
                 />
-                <img src="/Flag PSD.svg" alt="" className='max-h-[400px] absolute lg:static top-0 -right-20 sm:-right-16 md:right-0 xl:max-h-[500px] object-contain' />
+                <img src="/Flag PSD.svg" alt="" className='flag max-h-[400px] absolute lg:static top-0 -right-12 sm:-right-16 md:right-0 xl:max-h-[500px] object-contain' />
             </section>
             <div className='flex flex-col justify-center items-center relative z-[80] mt-7' >
                 
