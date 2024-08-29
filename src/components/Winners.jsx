@@ -60,27 +60,28 @@ export default function Winners() {
   ]
   return (
 
-    <section className="w- sm:w-[500px] h-[500px] sm:h-[800px] relative mx-auto text-white">
-      <img src="/winnerframe-bg.svg" alt="Winner Container " className="w-full h-full object-fill relative z-10" />
-      <article className="w-full h-full absolute top-0 left-0 py-8 px-4 sm:px-16 overflow-hidden">
-        <h3 className='text-center text-2xl text-white font-semibold'>Winner</h3>
-        <div className='flex justify-between items-center gap-3 mt-5 md:mt-2'>
-            <button onClick={handleClick} className='bg-orange-600 py-1 px-3 rounded-lg cursor-pointer hover:bg-white'>Winner's List</button>
-            <button onClick={handleClick} className='bg-white text-black py-1 px-3 rounded-lg cursor-pointer'>Winning Record</button>
+    <section className="w-full h-full sm:w-[500px] h-[500px] sm:h-[800px] relative mx-auto text-white">
+  <img src="/winner-frame.svg" alt="Winner Container" className="w-full sm:h-[800px] object-cover relative z-20" />
+  <article className="frame-header w-full h-full absolute top-0 left-0 py-4 sm:py-8 px-2 sm:px-16 overflow-hidden z-20 mt-5 mx-auto">
+    <h3 className='text-center text-2xl text-white font-semibold'>Winner</h3>
+    <div className='flex justify-between items-center gap-2 px-6 my-2'>
+      <button onClick={handleClick} className='bg-orange-600 py-1 px-2 sm:px-3 rounded-lg cursor-pointer hover:bg-white'>Winner's List</button>
+      <button onClick={handleClick} className='bg-white text-black py-1 px-2 sm:px-3 rounded-lg cursor-pointer'>Winning Record</button>
+    </div>
+    <ul className="w-full h-[calc(100%-120px)] overflow-hidden sm:h-[75%] -mt-1 sm:mt-8 z-1 px-6 z-10">
+      {UserData.map(({id, name, points}) => (
+        <section className="animation-section flex items-center justify-between px-2 py-2 sticky top-0" key={id}>
+          <div className="date">{TodayDate.format('DD/MM/YYYY')}</div>
+          <div className="user-data flex flex-col items-center">
+            <div>{name}</div>
+            <div className="user-points text-orange-500">{points}</div>
           </div>
-        <ul className="w-full h-[calc(100%-100px)] overflow-hidden sm:h-full mt-8 z-1 ">
-          {UserData.map(({id, name, points}) =>(
-                <section className="animation-section flex items-center justify-between px-2 py-2 sticky top-0" key={id}>
-                <div className="date">{TodayDate.format('DD/MM/YYYY')}</div>
-                <div className="user-data flex flex-col items-center">
-                  <div>{name}</div>
-                  <div className="user-points text-orange-500">{points}</div>
-                </div>
-            </section>
-            ))}
-        </ul>
-      </article>
-    </section>
+        </section>
+      ))}
+    </ul>
+  </article>
+</section>
+
 
 
 

@@ -6,6 +6,7 @@ export default function Spiner() {
     const ref = useRef(null);
     const [availableSpins, setAvailableSpins] = useState(0);
     const [coupon, setCoupon] = useState("");
+    const [phone, setPhone] = useState("");
     const [isVerified, setIsVerified] = useState(false);
 
     const [spinItems, setSpinItems] = useState([
@@ -23,6 +24,7 @@ export default function Spiner() {
         ["PKR 650", "#ffffff00"],
     ]);
     const [prize, setPrize] = useState(null);
+    const spinSound = new Audio('/public/spinner-sound.mp3');
 
     const generatePrize = () => {
     let num =   Math.floor(Math.random() * spinItems.length);
@@ -33,27 +35,24 @@ export default function Spiner() {
     const handleVerifyCoupon = () => {
         let allocatedSpins = 0;
 
-        switch(coupon.trim().toLowerCase()) {
-            case "code123":
-                allocatedSpins = 3;
-                break;
-            case "code456":
-                allocatedSpins = 6;
-                break;
-            case "code789":
-                allocatedSpins = 9;
-                break;
-            default:
-                alert("Invalid voucher code");
-                return;
+        if (coupon.trim().toLowerCase() === "code123" && phone === "1234") {
+            allocatedSpins = 3;
+        } else if (coupon.trim().toLowerCase() === "code456" && phone === "5678") {
+            allocatedSpins = 6;
+        } else if (coupon.trim().toLowerCase() === "code789" && phone === "1122") {
+            allocatedSpins = 9;
+        } else {
+            alert("Invalid voucher code or phone number");
+            return;
         }
+        
 
         setAvailableSpins(allocatedSpins);
         setIsVerified(true);
     }
     const handleSpinLuckWheel = () => {
         if (availableSpins > 0) {
-            
+            spinSound.play();
             setAvailableSpins((prevSpins) => prevSpins - 1);
             ref.current.handleSpin();
         } else {
@@ -99,6 +98,13 @@ export default function Spiner() {
         </div>
     ) : (
         <div className="flex flex-col items-center md:space-y-4 space-y-2 w-full">
+            <input
+                type="number"
+                value={phone}
+                placeholder="Phone e.g 923XXXXXXXXX"
+                onChange={(e) => setPhone(e.target.value)}
+                className="md:w-1/4 w-1/2 text-center p-3 rounded-lg text-xs md:text-sm outline-none"
+            />
             <input
                 type="text"
                 value={coupon}
