@@ -24,7 +24,7 @@ export default function Spiner() {
         ["PKR 650", "#ffffff00"],
     ]);
     const [prize, setPrize] = useState(null);
-    const spinSound = new Audio('../public/spinner-sound.mp3');
+    const spinSound = new Audio('/spinner-sound.mp3');
 
     const generatePrize = () => {
     let num =   Math.floor(Math.random() * spinItems.length);
