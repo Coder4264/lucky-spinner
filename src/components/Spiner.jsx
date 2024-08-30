@@ -35,11 +35,11 @@ export default function Spiner() {
     const handleVerifyCoupon = () => {
         let allocatedSpins = 0;
 
-        if (coupon.trim().toLowerCase() === "code123" && phone === "+601111111111") {
+        if (coupon.trim().toLowerCase() === "code123" && phone === "601111111111") {
             allocatedSpins = 3;
-        } else if (coupon.trim().toLowerCase() === "code456" && phone === "+601111111112") {
+        } else if (coupon.trim().toLowerCase() === "code456" && phone === "601111111112") {
             allocatedSpins = 6;
-        } else if (coupon.trim().toLowerCase() === "code789" && phone === "+601111111113") {
+        } else if (coupon.trim().toLowerCase() === "code789" && phone === "601111111113") {
             allocatedSpins = 9;
         } else {
             alert("Invalid voucher code or phone number");
