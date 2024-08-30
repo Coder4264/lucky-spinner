@@ -39,7 +39,7 @@ body{
   top: 50%;
   left: 50%;
   transform: translate(-51%, -63%);
-  width: 29%;
+  width: 25%;
   z-index: 40;
 }
 .spin-spinner-bg {
@@ -172,16 +172,17 @@ input[type="number"] {
     margin-top: -100px; 
   }
   .main_spin_wheel > div > div > div > canvas  {
-    width: 250px; 
-    height: 250px; 
+    width: 270px; 
+    height: 270px; 
   }
   .main_spin_wheel {
-    transform: translate(-37%, -38%);
+    transform: translate(-38.5%, -40%) rotate(-2deg);
     
   }
   .flag{
-    height: 350px;
-    margin-top: -140px;
+    height: 250px;
+    margin-top: -200px;
+    margin: -200px 30px;
   }
 }
 

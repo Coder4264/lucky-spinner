@@ -10,18 +10,18 @@ export default function Spiner() {
     const [isVerified, setIsVerified] = useState(false);
 
     const [spinItems, setSpinItems] = useState([
-        ["PKR 100", "#ffffff00"],
-        ["PKR 150", "#ffffff00"],
-        ["PKR 200", "#ffffff00"],
-        ["PKR 250", "#ffffff00"],
-        ["PKR 300", "#ffffff00"],
-        ["PKR 350", "#ffffff00"],
-        ["PKR 400", "#ffffff00"],
-        ["PKR 450", "#ffffff00"],
-        ["PKR 500", "#ffffff00"],
-        ["PKR 550", "#ffffff00"],
-        ["PKR 600", "#ffffff00"],
-        ["PKR 650", "#ffffff00"],
+        ["Iphone 15 512GB", "#ffffff00"],
+        ["Try Again", "#ffffff00"],
+        ["Apple Watch 9", "#ffffff00"],
+        ["Free Kredit 188", "#ffffff00"],
+        ["Trt Again", "#ffffff00"],
+        ["Free Kredit 8", "#ffffff00"],
+        ["Deposit Bonus 30%", "#ffffff00"],
+        ["Try Again", "#ffffff00"],
+        ["Free Kredit 88", "#ffffff00"],
+        ["Deposit Bonus 20%", "#ffffff00"],
+        ["Try Again", "#ffffff00"],
+        ["Free Kredit 8", "#ffffff00"],
     ]);
     const [prize, setPrize] = useState(null);
     const spinSound = new Audio('/spinner-sound.mp3');
@@ -35,11 +35,11 @@ export default function Spiner() {
     const handleVerifyCoupon = () => {
         let allocatedSpins = 0;
 
-        if (coupon.trim().toLowerCase() === "code123" && phone === "1234") {
+        if (coupon.trim().toLowerCase() === "code123" && phone === "+601111111111") {
             allocatedSpins = 3;
-        } else if (coupon.trim().toLowerCase() === "code456" && phone === "5678") {
+        } else if (coupon.trim().toLowerCase() === "code456" && phone === "+601111111112") {
             allocatedSpins = 6;
-        } else if (coupon.trim().toLowerCase() === "code789" && phone === "1122") {
+        } else if (coupon.trim().toLowerCase() === "code789" && phone === "+601111111113") {
             allocatedSpins = 9;
         } else {
             alert("Invalid voucher code or phone number");
@@ -57,6 +57,7 @@ export default function Spiner() {
             ref.current.handleSpin();
         } else {
             alert("You have no spins right now!");
+            return;
         }
     }
 
@@ -68,15 +69,15 @@ export default function Spiner() {
 
 
 
-        <main className='py-56 bg-[url(../public/mobile-final.svg)] md:bg-[url(../public/desktop-final.svg)] w-full bg-center bg-cover overflow-hidden'>
+        <main className='py-56 bg-[url(../public/desktop-final.svg)] w-full bg-center bg-cover overflow-hidden'>
             <section className='w-12/12 h-full xl:w-10/12 mx-auto flex items-start justify-center relative'>
-                <img src="/Flag PSD.svg" alt="" className='flag max-h-[400px] absolute lg:static top-0 -left-12 sm:-left-16 md:left-0 xl:max-h-[500px] object-contain' />
+                <img src="/Flag PSD.svg" alt="" className='flag max-h-[400px] absolute lg:static top-0 -left-10 sm:-left-16 md:left-0 xl:max-h-[500px] object-contain' />
                 <SpinnerFrame
                     spinnerRef={ref}
                     spinItems={spinItems}
                     prize={prize}
                 />
-                <img src="/Flag PSD.svg" alt="" className='flag max-h-[400px] absolute lg:static top-0 -right-12 sm:-right-16 md:right-0 xl:max-h-[500px] object-contain' />
+                <img src="/Flag PSD.svg" alt="" className='flag max-h-[400px] absolute lg:static top-0 -right-10 sm:-right-16 md:right-0 xl:max-h-[500px] object-contain' />
             </section>
             <div className='flex flex-col justify-center items-center relative z-[80] mt-7' >
                 
@@ -101,7 +102,7 @@ export default function Spiner() {
             <input
                 type="number"
                 value={phone}
-                placeholder="Phone e.g 923XXXXXXXXX"
+                placeholder="Phone e.g +6011XXXXXXXX"
                 onChange={(e) => setPhone(e.target.value)}
                 className="md:w-1/4 w-1/2 text-center p-3 rounded-lg text-xs md:text-sm outline-none"
             />

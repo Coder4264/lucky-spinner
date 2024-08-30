@@ -7,7 +7,7 @@ export default function SpinnerFrame({ spinnerRef, spinItems, prize }) {
     <section className="">
       <div className="spin-container">
         <img src={"/frame-final.svg"} className="spinner-outer-img" />
-        <img src={"/01.png"} className="spin-ticker" />
+        <img src={"/needle.svg"} className="spin-ticker ml-px -mt-0.5" />
         <img src={"/wheel-final.svg"} className="spin-spinner-bg" />
         <div>
           <SpinWheelGame 

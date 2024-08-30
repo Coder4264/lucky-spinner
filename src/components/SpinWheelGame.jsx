@@ -17,9 +17,9 @@ export default function SpinWheelGame({ spinnerRef, spinItems, prize  }) {
             result={prize}
             hideButton={true}
             horizantalText={false}
-            minTime = {5}
-            maxTime={15}    
-            fontSize={16}
+            minTime = {7}
+            maxTime={7}    
+            fontSize={12}
         />
       }
     </div>
