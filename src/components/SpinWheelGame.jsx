@@ -19,7 +19,7 @@ export default function SpinWheelGame({ spinnerRef, spinItems, prize  }) {
             horizantalText={false}
             minTime = {7}
             maxTime={7}    
-            fontSize={12}
+            fontSize={18}
         />
       }
     </div>

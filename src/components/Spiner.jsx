@@ -10,18 +10,18 @@ export default function Spiner() {
     const [isVerified, setIsVerified] = useState(false);
 
     const [spinItems, setSpinItems] = useState([
-        ["Iphone 15 512GB", "#ffffff00"],
+        ["PKR 100", "#ffffff00"],
+        ["PKR 150", "#ffffff00"],
         ["Try Again", "#ffffff00"],
-        ["Apple Watch 9", "#ffffff00"],
-        ["Free Kredit 188", "#ffffff00"],
-        ["Trt Again", "#ffffff00"],
-        ["Free Kredit 8", "#ffffff00"],
-        ["Deposit Bonus 30%", "#ffffff00"],
+        ["PKR 200", "#ffffff00"],
+        ["PKR 250", "#ffffff00"],
         ["Try Again", "#ffffff00"],
-        ["Free Kredit 88", "#ffffff00"],
-        ["Deposit Bonus 20%", "#ffffff00"],
+        ["PKR 300", "#ffffff00"],
+        ["PKR 350", "#ffffff00"],
         ["Try Again", "#ffffff00"],
-        ["Free Kredit 8", "#ffffff00"],
+        ["PKR 400", "#ffffff00"],
+        ["PKR 500", "#ffffff00"],
+        ["Try Again", "#ffffff00"],
     ]);
     const [prize, setPrize] = useState(null);
     const spinSound = new Audio('/spinner-sound.mp3');
@@ -71,13 +71,13 @@ export default function Spiner() {
 
         <main className='py-56 bg-[url(../public/desktop-final.svg)] w-full bg-center bg-cover overflow-hidden'>
             <section className='w-12/12 h-full xl:w-10/12 mx-auto flex items-start justify-center relative'>
-                <img src="/Flag PSD.svg" alt="" className='flag max-h-[400px] absolute lg:static top-0 -left-10 sm:-left-16 md:left-0 xl:max-h-[500px] object-contain' />
+                <img src="/Flag GIF.gif" alt="" className='flag max-h-[400px] absolute lg:static top-0 -left-10 sm:-left-16 md:left-0 xl:max-h-[500px] object-contain' />
                 <SpinnerFrame
                     spinnerRef={ref}
                     spinItems={spinItems}
                     prize={prize}
                 />
-                <img src="/Flag PSD.svg" alt="" className='flag max-h-[400px] absolute lg:static top-0 -right-10 sm:-right-16 md:right-0 xl:max-h-[500px] object-contain' />
+                <img src="/Flag GIF.gif" alt="" className='flag max-h-[400px] absolute lg:static top-0 -right-10 sm:-right-16 md:right-0 xl:max-h-[500px] object-contain' />
             </section>
             <div className='flex flex-col justify-center items-center relative z-[80] mt-7' >
                 
