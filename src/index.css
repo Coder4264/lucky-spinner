@@ -160,6 +160,12 @@ input[type="number"] {
 }
 
 @media (max-width:480px){
+  body{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
   .spin-container {
     position: relative;
     width: 350px;
@@ -318,3 +324,8 @@ input[type="number"] {
     height: 450px;
   }
 } */
+
+
+.navbar{
+  z-index: 999;
+}

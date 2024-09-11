@@ -35,11 +35,11 @@ export default function Spiner() {
     const handleVerifyCoupon = () => {
         let allocatedSpins = 0;
 
-        if (coupon.trim().toLowerCase() === "code123" && phone === "601111111111") {
+        if (coupon.trim().toLowerCase() === "code123" && phone === "123") {
             allocatedSpins = 3;
-        } else if (coupon.trim().toLowerCase() === "code456" && phone === "601111111112") {
+        } else if (coupon.trim().toLowerCase() === "code456" && phone === "456") {
             allocatedSpins = 6;
-        } else if (coupon.trim().toLowerCase() === "code789" && phone === "601111111113") {
+        } else if (coupon.trim().toLowerCase() === "code789" && phone === "789") {
             allocatedSpins = 9;
         } else {
             alert("Invalid voucher code or phone number");
@@ -102,10 +102,11 @@ export default function Spiner() {
             <input
                 type="number"
                 value={phone}
-                placeholder="Phone e.g +6011XXXXXXXX"
+                placeholder="Phone e.g 92XXXXXXXXXX"
                 onChange={(e) => setPhone(e.target.value)}
                 className="md:w-1/4 w-1/2 text-center p-3 rounded-lg text-xs md:text-sm outline-none"
             />
+            <span className=''>For Demo Use 123</span>
             <input
                 type="text"
                 value={coupon}
@@ -113,6 +114,7 @@ export default function Spiner() {
                 onChange={(e) => setCoupon(e.target.value)}
                 className="md:w-1/4 w-1/2 text-center p-3 rounded-lg text-xs md:text-sm outline-none"
             />
+            <span>For Demo Use code123</span>
             <button
                 onClick={handleVerifyCoupon}
                 className="bg-blue-500 text-white rounded-lg p-2 md:p-3 hover:bg-blue-600 transition duration-300 md:w-1/4 w-1/2 text-center md:p-3 p-2 rounded-lg"
